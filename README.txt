@@ -5,7 +5,7 @@ ISO/IEC 9899 stdint.h and inttypes.h polyfills.
 == Targets ==
 
 - MSVC
-- GNUC
+- GCC
 - Any C99 compiler
 
 == Credits ==
