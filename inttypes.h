@@ -23,11 +23,6 @@ extern "C" {
 
 #include "stdint.h"
 
-typedef struct {
-   intmax_t quot;
-   intmax_t rem;
-} imaxdiv_t;
-
 #if defined(_MSC_VER)
 
 #if !defined(__cplusplus) || defined(__STDC_FORMAT_MACROS)
@@ -273,6 +268,11 @@ typedef struct {
 
 #define imaxabs _abs64
 
+typedef struct {
+   intmax_t quot;
+   intmax_t rem;
+} imaxdiv_t;
+
 static
 __inline
 imaxdiv_t __cdecl imaxdiv(intmax_t numer, intmax_t denom) {
@@ -496,6 +496,9 @@ imaxdiv_t __cdecl imaxdiv(intmax_t numer, intmax_t denom) {
 #endif
 
 #define imaxabs llabs
+
+typedef lldiv_t imaxdiv_t;
+
 #define imaxdiv lldiv
 
 #define strtoimax strtoll
